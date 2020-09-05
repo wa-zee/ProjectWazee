@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 27, 2019, 9:48:45 AM
+    Author     : Awazi
+*/
+.parent{
+    -fx-background-color: #fff;
+    -fx-background-image: url("../img/image1.jpeg");
+    -fx-background-size: 1360 700;
+    -fx-background-repeat: no-repeat;
+}
+.picturepane{
+    -fx-background-image: url("../img/images.jpeg");
+    /*-fx-background-size: 900 600;*/
+    -fx-background-repeat:no-repeat;
+}
+.detailspane{
+    -fx-background-color: #333645;
+    -fx-text-fill: #fff;
+}
+.sidebar{
+    -fx-background-color: #333645;
+    -fx-text-fill: #fff;
+    
+}
+.titleLabel {    
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-size: 20;
+    -fx-text-fill: #fff;
+    -fx-padding: 0 0 0 0;
+}
+.title {    
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-size: 20;
+    -fx-text-fill: #000;
+    -fx-padding: 0 0 0 0;
+}
+.btn{
+    -fx-background-color: transparent;
+    -fx-text-fill:#fff;
+    -fx-font-size: 16;
+}
+.btn:hover{
+    -fx-background-color: #203235;
+}
+.anchorpane{
+    -fx-background-image: url("");       
+}
+.social{
+    -fx-text-fill:#d2e1d4;
+    -fx-font-size: 16;
+    -fx-font-family: "Berlin Sans FB";
+}
+.social:hover{
+    -fx-background-color: #16c8ff;
+    
+}

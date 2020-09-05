@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlinebookingsystem.AdminDashboardController">
+    <stylesheets>
+        <URL value="@airlinebookingsystem.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane fx:id="mainpane" prefHeight="600.0" prefWidth="900.0" styleClass="parent" stylesheets="@airlinebookingsystem.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" spacing="20.0" styleClass="sidebar" stylesheets="@airlinebookingsystem.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #64CCF1;" styleClass="titleLabel" text="Admin Panel" />
+                  <HBox fx:id="viewusers" styleClass="btn" stylesheets="@airlinebookingsystem.css">
+                     <children>
+                        <FontAwesomeIconView fill="#f8fffe" glyphName="USERS" size="20" styleClass="btn" />
+                        <Label accessibleRole="BUTTON" styleClass="btn" stylesheets="@airlinebookingsystem.css" text="Manage Users" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="insertschedule" layoutX="10.0" layoutY="85.0" styleClass="btn" stylesheets="@airlinebookingsystem.css">
+                     <children>
+                        <FontAwesomeIconView fill="#f8fffe" glyphName="CALENDAR" size="20" styleClass="btn" />
+                        <Label styleClass="btn" stylesheets="@airlinebookingsystem.css" text="Manage Schedule" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="viewbookings" layoutX="10.0" layoutY="145.0" styleClass="btn" stylesheets="@airlinebookingsystem.css">
+                     <children>
+                        <MaterialIconView fill="#fcf5f5" fontSmoothingType="LCD" glyphName="AIRLINE_SEAT_RECLINE_EXTRA" size="20" />
+                        <Label styleClass="btn" stylesheets="@airlinebookingsystem.css" text="View Bookings" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="viewroute" layoutX="10.0" layoutY="165.0" styleClass="btn" stylesheets="@airlinebookingsystem.css">
+                     <children>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ROUTES" size="20" />
+                        <Label styleClass="btn" stylesheets="@airlinebookingsystem.css" text="View Routes" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="flightdetails" layoutX="10.0" layoutY="105.0" styleClass="btn" stylesheets="@airlinebookingsystem.css" visible="false">
+                     <children>
+                        <FontAwesomeIconView fill="#f8fffe" glyphName="PLANE" size="20" styleClass="btn" />
+                        <Label styleClass="btn" stylesheets="@airlinebookingsystem.css" text="Flight Details" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="back" layoutX="10.0" layoutY="345.0" styleClass="btn" stylesheets="@airlinebookingsystem.css">
+                     <children>
+                        <FontAwesomeIconView fill="#f8fffe" glyphName="BACKWARD" size="20" styleClass="btn" />
+                        <Label styleClass="btn" stylesheets="@airlinebookingsystem.css" text="Logout" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="300.0" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="tablevbox" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <TableView fx:id="usertable" prefHeight="200.0" prefWidth="600.0" tableMenuButtonVisible="true" visible="false">
+                          <columns>
+                            <TableColumn fx:id="idcol" prefWidth="50.0" text="id" />
+                            <TableColumn fx:id="fnamecol" prefWidth="75.0" text="fname" />
+                              <TableColumn fx:id="lnamecol" prefWidth="75.0" text="lname" />
+                              <TableColumn fx:id="emailcol" prefWidth="75.0" text="email" />
+                              <TableColumn fx:id="rolecol" prefWidth="60.0" text="role" />
+                              <TableColumn fx:id="phonecol" prefWidth="75.0" text="phone" />
+                              <TableColumn fx:id="addresscol" prefWidth="75.0" text="address" />
+                              <TableColumn fx:id="passwordcol" prefWidth="60.0" text="password" />
+                              <TableColumn fx:id="deletecol" prefWidth="40.0" text="delete" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <AnchorPane fx:id="schedulepane" visible="false">
+                     <children>
+                        <VBox fx:id="insertschedvbox" prefHeight="400.0" prefWidth="300.0" spacing="20.0" style="-fx-background-color: #fff;">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Label text="Schedule ID" />
+                                    <JFXTextField fx:id="scheduleidtxt" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <Label text="Depature Date" />
+                                    <JFXDatePicker fx:id="departdate" prefWidth="300.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="54.0">
+                                 <children>
+                                    <Label text="Departure Time" />
+                                    <JFXTimePicker fx:id="departtime" prefWidth="300.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="98.0">
+                                 <children>
+                                    <Label text="Arrival Date" />
+                                    <JFXDatePicker fx:id="arrivedate" prefWidth="300.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="142.0">
+                                 <children>
+                                    <Label text="Arrival Time" />
+                                    <JFXTimePicker fx:id="arrivetime" prefWidth="300.0" />
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="scheduleinsert" mnemonicParsing="false" text="Insert" />
+                                    <Button fx:id="scheduleupdate" mnemonicParsing="false" text="Update" visible="false" />
+                                    <Button fx:id="scheduledelete" mnemonicParsing="false" text="Delete" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                        <TableView fx:id="schedtable" layoutX="232.0">
+                          <columns>
+                            <TableColumn fx:id="schedidcol" prefWidth="75.0" text="ScheduleID" />
+                            <TableColumn fx:id="scheddeptdatecol" prefWidth="75.0" text="Departure Date" />
+                              <TableColumn fx:id="scheddeparttimecol" prefWidth="75.0" text="Departure Time" />
+                              <TableColumn fx:id="schedarrivedatecol" prefWidth="75.0" text="Arrival Date" />
+                              <TableColumn fx:id="schedarrivetimecol" prefWidth="75.0" text="Arrival Time" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <VBox fx:id="routetablevbox" prefHeight="600.0" prefWidth="600.0" visible="false">
+                     <children>
+                        <TableView fx:id="routetable" prefHeight="200.0" prefWidth="400.0">
+                          <columns>
+                            <TableColumn fx:id="routeidcol" prefWidth="75.0" text="Route ID" />
+                            <TableColumn fx:id="deptcitycol" prefWidth="95.0" text="Departure City" />
+                              <TableColumn fx:id="destcitycol" prefWidth="100.0" text="Destination City" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="viewbookingsvbox" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="bookingstable" prefHeight="200.0" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="bookingidcol" prefWidth="63.0" text="BookingID" />
+                            <TableColumn fx:id="custnamecol" prefWidth="98.0" text="Customer Name" />
+                              <TableColumn fx:id="deptcitycol1" prefWidth="90.0" text="Departure City" />
+                              <TableColumn fx:id="destcitycol1" prefWidth="96.0" text="Destination City" />
+                              <TableColumn fx:id="deptdatecol1" minWidth="8.0" prefWidth="92.0" text="Departure Date" />
+                              <TableColumn fx:id="returndatecol" prefWidth="82.0" text="Return Date" />
+                              <TableColumn fx:id="fareclasscol" prefWidth="72.0" text="Fare Class" />
+                          </columns>
+                        </TableView>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="regvbox" alignment="CENTER" prefHeight="447.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.topAnchor="200.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="First Name  " />
+                              <TextField fx:id="regfname" prefWidth="300.0" />
+                              <Label fx:id="valfnametxt" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Last Name  " />
+                              <TextField fx:id="reglname" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" />
+                              <Label fx:id="vallnametxt" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="email          " />
+                              <TextField fx:id="regemail" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <Label fx:id="valemailtxt" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Role           " />
+                              <ComboBox fx:id="regrole" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" />
+                              <Label layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Phone        " />
+                              <TextField fx:id="regphone" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <Label fx:id="valphonetxt" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Address      " />
+                              <TextField fx:id="regaddress" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <Label layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Password    " />
+                              <PasswordField fx:id="regpassword" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <Label fx:id="valpasswordtxt" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="30.0" layoutY="91.0" spacing="10.0">
+                           <children>
+                              <Label text="id" />
+                              <TextField fx:id="useridtxt" prefWidth="300.0" text="blank field" />
+                              <Label fx:id="valfnametxt1" layoutX="310.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="30.0">
+                           <children>
+                              <Button fx:id="btnreg" mnemonicParsing="false" text="Add User">
+                                 <graphic>
+                                    <FontAwesomeIconView />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="deleteuser" mnemonicParsing="false" text="Delete User">
+                                 <graphic>
+                                    <FontAwesomeIconView />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
